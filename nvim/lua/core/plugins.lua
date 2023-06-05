@@ -32,6 +32,8 @@ return require('packer').startup(function(use)
 	  dependencies = { {'nvim-lua/plenary.nvim'} }
   }
   use 'vimwiki/vimwiki'
+  use 'audente/vimwiki-git'
+
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins

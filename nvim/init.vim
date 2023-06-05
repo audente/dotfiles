@@ -46,3 +46,30 @@ require("core.plugins")
 require("core.plugin_config")
 
 EOF
+
+" Setup for vimwiki
+"
+" This file should be sourced from your .vimrc
+"
+"
+" Set or override all/any options for personal wiki.
+let wiki = {
+\           'path': '~/vimwiki/',
+\           'path_html': '~/vimwiki/HTML/',
+\           'auto_export': 0,
+\           'index': 'index',
+\           'syntax': 'default',
+\           'ext': '.wiki',
+\           'auto_toc': 1,
+\           'maxhi': 1,
+\           'nested_syntaxes': {'python': 'python', 'js': 'javascript', 'c++': 'cpp'},
+\           'list_margin': -1
+\           }
+
+" Make wiki the default vimwiki setup
+let g:vimwiki_list = [wiki]
+" When opening a directory containing a file with this name and default wiki
+" extention, assume it is a vimwiki
+let g:vimwiki_dir_link = ''
+" Only treat .md files under a path in vimwiki_list as wiki files
+let g:vimwiki_global_ext = 0
