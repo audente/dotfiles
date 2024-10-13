@@ -38,6 +38,11 @@ autocmd FileType swift map <Leader>r :w<CR>:!swiftc % && ./%:r<cr>
 autocmd FileType python map <buffer> <F9> :w<CR>:exec '!python3' shellescape(@%, 1)<CR>
 autocmd FileType python imap <buffer> <F9> <esc>:w<CR>:exec '!python3' shellescape(@%, 1)<CR>
 
+"NeoVim transparent background
+highlight Normal guibg=none
+highlight NonText guibg=none
+highlight Normal ctermbg=none
+highlight NonText ctermbg=none
 
 lua <<EOF
 
