@@ -35,6 +35,7 @@ return require('packer').startup(function(use)
   }
   use 'vimwiki/vimwiki'
   use 'audente/vimwiki-git'
+  use 'github/copilot.vim'
 
 
   -- Automatically set up your configuration after cloning packer.nvim
