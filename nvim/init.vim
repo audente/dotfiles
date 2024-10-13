@@ -40,8 +40,10 @@ autocmd FileType python imap <buffer> <F9> <esc>:w<CR>:exec '!python3' shellesca
 
 "NeoVim transparent background
 highlight Normal guibg=none
+highlight NormalNC guibg=none
 highlight NonText guibg=none
 highlight Normal ctermbg=none
+highlight NormalNC ctermbg=none
 highlight NonText ctermbg=none
 
 lua <<EOF
