@@ -16,6 +16,7 @@ set history=100
 
 set showcmd
 set incsearch
+set cmdheight=0
 
 if &t_Co > 2 || has("gui_running")
   syntax on
