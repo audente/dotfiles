@@ -11,5 +11,11 @@ if [[ "$MOD_VER" == "" ]];  then
 fi
 
 echo "Aprobando nómina: '$MOD_ID'"
+echo "======"
 
 sqlcmd -S $(pass petal/form/srvr) -U $(pass petal/form/user) -P $(pass petal/form/pass) -d $(pass petal/form/db) -Q "UPDATE GLO_PETAL.CPE_MODULE SET CVC_VERSION = '$(echo $MOD_VER)' WHERE CPK_MODULE_ID=$(echo $MOD_ID);"
+
+echo "======"
+echo "Actualizado"
+echo "======"
+./get_modulos.sh
