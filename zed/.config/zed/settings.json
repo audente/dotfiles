@@ -6,25 +6,61 @@
 // To see all of Zed's default settings without changing your
 // custom settings, run the `open default settings` command
 // from the command palette or from `Zed` application menu.
+
 {
+    "features": {
+        "edit_prediction_provider": "copilot",
+        "inline_completion_proveder": "copilot"
+    },
+    "icon_theme": "Material Icon Theme",
+    "base_keymap": "VSCode",
+    "agent": {
+        "default_model": {
+            "provider": "copilot_chat",
+            "model": "gpt-4.1"
+        },
+        "version": "2"
+    },
     "terminal": {
         "dock": "right",
+        "copy_on_select": true,
+        "font_size": 12,
+        "font_family": "FiraCode Nerd Font Mono",
+        "font_fallbacks": ["FiraCode Nerd Fonts"],
+        "font_features": null,
+
         "alternate_scroll": "off",
         "blinking": "terminal_controlled",
-        "copy_on_select": true,
         "env": {},
-        "font_family": "MesloLGS NF",
-        "font_features": null,
-        "font_size": 12,
-        "option_as_meta": false
+        "option_as_meta": false,
+        "background": "#0000"
     },
+    "tabs": { "file_icons": true },
     "theme": "Tokyo Night",
     "vim_mode": true,
     "tab_size": 4,
     "hard_tabs": false,
-    "ui_font_size": 12,
-    "buffer_font_size": 14,
+
+    // The name of a font to use for rendering text in the UI
+    // You can set this to ".SystemUIFont" to use the system font
+    "ui_font_family": "Zed Plex Sans",
+    // Set the UI's font fallbacks, this will be merged with the platform's
+    // default font fallbacks.
+    "ui_font_fallbacks": null,
+    // The OpenType features to enable for text in the UI
+    "ui_font_features": {
+        // Disable ligatures:
+        "calt": false
+    },
+    // The weight of the UI font in standard CSS units from 100 to 900.
+    "ui_font_weight": 100,
+    // The default font size for text in the UI
+    "ui_font_size": 15,
+
+    "buffer_font_size": 12.0,
     "buffer_font_family": "Fira Code",
+    "buffer_line_height": "comfortable",
+
     "soft_wrap": "editor_width",
     "vim": {
         // "always": use system clipboard
@@ -34,6 +70,8 @@
         // Lets `f` and `t` motions extend across multiple lines
         "use_multiline_find": true
     },
+    // Whether to restore last closed project when fresh Zed instance is opened.
+    "restore_on_startup": "last_session",
     // disable cursor blink
     "cursor_blink": false,
     // use relative line numbers
