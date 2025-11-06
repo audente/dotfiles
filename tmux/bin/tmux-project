@@ -1,0 +1,19 @@
+#!/bin/bash
+
+# Obtener el nombre de la sesión basado en la carpeta actual
+SESSION_NAME=$(basename "$PWD" | tr . -)
+
+# Verificar si la sesión ya existe
+tmux has-session -t "$SESSION_NAME" 2>/dev/null
+
+if [ $? != 0 ]; then
+  # Si no existe, crear una nueva sesión con el layout deseado
+  tmux new-session -d -s "$SESSION_NAME" -c "$PWD"
+
+  # Ventana 1: 
+  tmux rename-window -t "$SESSION_NAME:1" "Default"
+
+fi
+
+# Conectarse a la sesión
+tmux attach-session -t "$SESSION_NAME"
