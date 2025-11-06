@@ -7,7 +7,9 @@ set nocompatible
 syntax enable
 syntax on
 
-set tabstop=2 shiftwidth=2 expandtab
+set tabstop=2 
+set shiftwidth=2
+set expandtab
 set softtabstop=0 smarttab
 set autoindent
 set breakindent
@@ -33,19 +35,12 @@ let g:gruvbox_contrast_dark = 'hard'
 
 map <Leader>s :w<CR>
 map <Leader>h :nohlsearch<CR>
+map <leader>y "+y
 
 autocmd FileType swift map <Leader>r :w<CR>:!swiftc % && ./%:r<cr>
 
 autocmd FileType python map <buffer> <F9> :w<CR>:exec '!python3' shellescape(@%, 1)<CR>
 autocmd FileType python imap <buffer> <F9> <esc>:w<CR>:exec '!python3' shellescape(@%, 1)<CR>
-
-"NeoVim transparent background
-highlight Normal guibg=none
-highlight NormalNC guibg=none
-highlight NonText guibg=none
-highlight Normal ctermbg=none
-highlight NormalNC ctermbg=none
-highlight NonText ctermbg=none
 
 lua <<EOF
 
@@ -80,3 +75,12 @@ let g:vimwiki_list = [wiki]
 let g:vimwiki_dir_link = ''
 " Only treat .md files under a path in vimwiki_list as wiki files
 let g:vimwiki_global_ext = 0
+
+" Transparent background
+highlight Normal guibg=none
+highlight NormalNC guibg=none
+highlight NonText guibg=none
+highlight Normal ctermbg=none
+highlight NormalNC ctermbg=none
+highlight NonText ctermbg=none
+
