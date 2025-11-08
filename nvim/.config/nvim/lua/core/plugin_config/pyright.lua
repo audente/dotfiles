@@ -1,5 +1,5 @@
 
-require("lspconfig").pyright.setup {
+vim.lsp.config['pyright'] = {
   on_attach = on_attach,
   settings = {
     python = {
