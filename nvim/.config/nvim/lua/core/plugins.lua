@@ -1,5 +1,5 @@
 --
-require('silence-trim-error')
+require('core.silence-trim-error')
 
 -- Bootstrap lazy.nvim
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
