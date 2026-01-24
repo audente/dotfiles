@@ -1,17 +1,12 @@
 # vim:fileencoding=utf-8:foldmethod=marker
 
-# BEGIN_KITTY_THEME
-# Tokyo Night
-include tokyo-night-theme.conf
-# END_KITTY_THEME
-
 #: Fonts {{{
 
 #: kitty has very powerful font management. You can configure
 #: individual font faces and even specify special fonts for particular
 #: characters.
 
-font_family      MesloLGS NF
+# font_family      monospace
 # bold_font        auto
 # italic_font      auto
 # bold_italic_font auto
@@ -25,7 +20,7 @@ font_family      MesloLGS NF
 #: <https://sw.kovidgoyal.net/kitty/kittens/choose-fonts/#font-spec-
 #: syntax>.
 
-font_size 15.0
+# font_size 11.0
 
 #: Font size (in pts).
 
@@ -270,7 +265,7 @@ font_size 15.0
 
 #: }}}
 
-#: Text cursor customization {{{{{{
+#: Text cursor customization {{{
 
 # cursor #cccccc
 
@@ -388,7 +383,7 @@ font_size 15.0
 #: the appearance of the cursor trail independently of the cursor
 #: color.
 
-#: }}}}}}
+#: }}}
 
 #: Scrollback {{{
 
@@ -605,8 +600,8 @@ font_size 15.0
 #:  - -1.0
 #:  - 0.1 3.0 40 yes
 
-url_color #0087bd
-url_style double
+# url_color #0087bd
+# url_style curly
 
 #: The color and style for highlighting URLs on mouse-over. url_style
 #: can be one of: none, straight, double, curly, dotted, dashed.
@@ -624,7 +619,7 @@ url_style double
 #: The set of URL prefixes to look for when detecting a URL under the
 #: mouse cursor.
 
-detect_urls yes
+# detect_urls yes
 
 #: Detect URLs under the mouse. Detected URLs are highlighted with an
 #: underline and the mouse cursor becomes a hand over them. Even if
@@ -648,7 +643,7 @@ detect_urls yes
 #: When the mouse hovers over a terminal hyperlink, show the actual
 #: URL that will be activated when the hyperlink is clicked.
 
-underline_hyperliks hover
+# underline_hyperlinks hover
 
 #: Control how hyperlinks are underlined. They can either be
 #: underlined on mouse hover, always (i.e. permanently underlined) or
@@ -660,7 +655,7 @@ underline_hyperliks hover
 #: to/from always will only affect text subsequently received by
 #: kitty.
 
-copy_on_select yes
+# copy_on_select no
 
 #: Copy to clipboard or a private buffer on select. With this set to
 #: clipboard, selecting text with the mouse will cause the text to be
@@ -1042,7 +1037,7 @@ copy_on_select yes
 
 #: Window layout {{{
 
-remember_window_size  yes
+# remember_window_size  yes
 # initial_window_width  640
 # initial_window_height 400
 
@@ -1053,7 +1048,7 @@ remember_window_size  yes
 #: suffix of "c" on the width/height values to have them interpreted
 #: as number of cells instead of pixels.
 
-remember_window_position no
+# remember_window_position no
 
 #: If enabled, the OS Window position will be remembered so that new
 #: instances of kitty will have the same position as the previous
@@ -1079,7 +1074,7 @@ remember_window_position no
 #: start_resizing_window. The cells value is used for horizontal
 #: resizing, and the lines value is used for vertical resizing.
 
-window_border_width 0.5pt
+# window_border_width 0.5pt
 
 #: The width of window borders. Can be either in pixels (px) or pts
 #: (pt). Values in pts will be rounded to the nearest number of pixels
@@ -1087,14 +1082,14 @@ window_border_width 0.5pt
 #: to be pts. Note that borders are displayed only when more than one
 #: window is visible. They are meant to separate multiple windows.
 
-draw_minimal_borders yes
+# draw_minimal_borders yes
 
 #: Draw only the minimum borders needed. This means that only the
 #: borders that separate the window from a neighbor are drawn. Note
 #: that setting a non-zero window_margin_width overrides this and
 #: causes all borders to be drawn.
 
-draw_window_borders_for_single_window no
+# draw_window_borders_for_single_window no
 
 #: Draw borders around a window even when there is only a single
 #: window visible. When enabled and there is only a single window,
@@ -1106,14 +1101,14 @@ draw_window_borders_for_single_window no
 #: windows visible, this option has no effect and normal border
 #: drawing rules apply.
 
-window_margin_width 5
+# window_margin_width 0
 
 #: The window margin (in pts) (blank area outside the border). A
 #: single value sets all four sides. Two values set the vertical and
 #: horizontal sides. Three values set top, horizontal and bottom. Four
 #: values set top, right, bottom and left.
 
-single_window_margin_width -1
+# single_window_margin_width -1
 
 #: The window margin to use when only a single window is visible (in
 #: pts). Negative values will cause the value of window_margin_width
@@ -1121,14 +1116,14 @@ single_window_margin_width -1
 #: set the vertical and horizontal sides. Three values set top,
 #: horizontal and bottom. Four values set top, right, bottom and left.
 
-window_padding_width 5
+# window_padding_width 0
 
 #: The window padding (in pts) (blank area between the text and the
 #: window border). A single value sets all four sides. Two values set
 #: the vertical and horizontal sides. Three values set top, horizontal
 #: and bottom. Four values set top, right, bottom and left.
 
-single_window_padding_width -1
+# single_window_padding_width -1
 
 #: The window padding to use when only a single window is visible (in
 #: pts). Negative values will cause the value of window_padding_width
@@ -1166,7 +1161,7 @@ single_window_padding_width -1
 #: Fade the text in inactive windows by the specified amount (a number
 #: between zero and one, with zero being fully faded).
 
-hide_window_decorations titlebar-only
+# hide_window_decorations no
 
 #: Hide the window decorations (title-bar and window borders) with
 #: yes. On macOS, titlebar-only and titlebar-and-corners can be used
@@ -1263,7 +1258,7 @@ hide_window_decorations titlebar-only
 
 #: Tab bar {{{
 
-tab_bar_edge top
+# tab_bar_edge bottom
 
 #: The edge to show the tab bar on, top or bottom.
 
@@ -1278,7 +1273,7 @@ tab_bar_edge top
 #: The second number is the margin between the tab bar and the
 #: contents of the current tab.
 
-tab_bar_style powerline
+# tab_bar_style fade
 
 #: The tab bar style, can be one of:
 
@@ -1319,7 +1314,7 @@ tab_bar_style powerline
 #: such as goto_tab, next_tab, previous_tab, etc. are automatically
 #: restricted to work only on matching tabs.
 
-tab_bar_align left
+# tab_bar_align left
 
 #: The horizontal alignment of the tab bar, can be one of: left,
 #: center, right.
@@ -1351,13 +1346,13 @@ tab_bar_align left
 #: The separator between tabs in the tab bar when using separator as
 #: the tab_bar_style.
 
-tab_powerline_style round
+# tab_powerline_style angled
 
 #: The powerline separator style between tabs in the tab bar when
 #: using powerline as the tab_bar_style, can be one of: angled,
 #: slanted, round.
 
-tab_activity_symbol " X "
+# tab_activity_symbol none
 
 #: Some text or a Unicode symbol to show on the tab if a window in the
 #: tab that does not have focus has some activity. If you want to use
@@ -1440,10 +1435,9 @@ tab_activity_symbol " X "
 # active_tab_foreground   #000
 # active_tab_background   #eee
 # active_tab_font_style   bold-italic
-active_tab_font_style   bold
 # inactive_tab_foreground #444
 # inactive_tab_background #999
-inactive_tab_font_style normal
+# inactive_tab_font_style normal
 
 #: Tab bar colors and styles.
 
@@ -1468,7 +1462,7 @@ inactive_tab_font_style normal
 
 #: The foreground and background colors.
 
-background_opacity 0.7
+# background_opacity 1.0
 
 #: The opacity of the terminal background color. A number between zero
 #: and one, where one is opaque and zero is fully transparent. This
@@ -1498,7 +1492,7 @@ background_opacity 0.7
 #: will only work if dynamic_background_opacity was enabled in the
 #: original config.
 
-background_blur 64
+# background_blur 0
 
 #: Set to a positive value to enable background blur (blurring of the
 #: visuals behind a transparent window) on platforms that support it.
@@ -1532,7 +1526,7 @@ background_blur 64
 #: Note that you must also set background_opacity to something less
 #: than 1 for this setting to work properly.
 
-dynamic_background_opacity yes
+# dynamic_background_opacity no
 
 #: Allow changing of the background_opacity dynamically, using either
 #: keyboard shortcuts (increase_background_opacity and
@@ -2096,7 +2090,7 @@ editor nvim
 #: to use the background color of the currently active kitty window
 #: and finally you can use an arbitrary color, such as #12af59 or red.
 
-# macos_titlebar_color dark
+# macos_titlebar_color system
 
 #: The color of the kitty window's titlebar on macOS. A value of
 #: system means to use the default system color, light or dark can
@@ -2996,5 +2990,3 @@ editor nvim
 #: }}}
 
 #: }}}
-
-
