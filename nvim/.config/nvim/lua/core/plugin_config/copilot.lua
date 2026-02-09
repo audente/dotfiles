@@ -1,10 +1,10 @@
--- Configuración de Copilot
+-- -- Configuración de Copilot
 -- require('copilot').setup({
 --   suggestion = {
 --     enabled = true,
 --     auto_trigger = true,
 --     keymap = {
---       accept = "<C-a>",  -- Aceptar toda la sugerencia
+--       accept = "<Tab>",  -- Aceptar toda la sugerencia
 --       next = "<C-j>",    -- Siguiente sugerencia
 --       prev = "<C-k>",    -- Anterior sugerencia
 --       dismiss = "<C-l>", -- Descartar sugerencia
@@ -15,12 +15,25 @@
 --   },
 -- })
 
--- Mapeos adicionales en modo inserción
-vim.keymap.set('i', '<C-w>', function() require('copilot.suggestion').accept_word() end, { silent = true })
-vim.keymap.set('i', '<C-e>', function() require('copilot.suggestion').accept_line() end, { silent = true })
+-- -- Mapeos en modo inserción
+vim.keymap.set('i', '<C-J>', 'copilot#Accept("\\<CR>")', {
+  expr = true,
+  replace_keycodes = false
+})
+vim.g.copilot_no_tab_map = true
 
--- Mapeos en modo normal
+vim.keymap.set('i', '<C-K>', '<Plug>(copilot-next)')
+vim.keymap.set('i', '<C-L>', '<Plug>(copilot-accept-word)')
+
+-- vim.keymap.set('i', '<C-w>', function() require('copilot.suggestion').accept_word() end, { silent = true })
+-- vim.keymap.set('i', '<C-e>', function() require('copilot.suggestion').accept_line() end, { silent = true })
+ 
+
+-- -- Mapeos en modo normal
 vim.keymap.set('n', '<Leader>ct', '<Cmd>Copilot toggle<CR>', { silent = true })
 vim.keymap.set('n', '<Leader>ce', '<Cmd>Copilot enable<CR>', { silent = true })
 vim.keymap.set('n', '<Leader>cd', '<Cmd>Copilot disable<CR>', { silent = true })
 vim.keymap.set('n', '<Leader>cs', '<Cmd>Copilot status<CR>', { silent = true })
+
+
+
